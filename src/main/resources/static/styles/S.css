@@ -1,0 +1,92 @@
+body{
+	background-image: url("Imagenes/fondo.png");
+	
+}
+
+#logoBanner{
+	width:100%; 
+	height:300px; 
+	background-image: url("Imagenes/banner2.png");
+}
+
+#logoBanner:hover{
+	background-image: url("Imagenes/banner3.png");
+}
+
+#imagenLogo{
+	display:block;
+	margin:auto;
+	width:100%;
+	top: 400px;
+	max-width:12000px;
+}	
+
+#nombreNick{
+	position:absolute;
+	top: 490px;
+	left: 500px;
+	font: 100% sans-serif;
+	color: white;
+	
+}
+.entrar{
+	border-style: solid;
+	border-color: #8B0000;
+	background-color: #8B0000;
+	border-radius: 10px;
+	width: 450px;
+	height: 300px;
+	display:block;
+	margin:auto;
+	margin-top: 90px;	
+}
+
+#nick{
+	border-color: #A52A2A;
+	border-radius: 5px;
+	width: 40%;
+	height: 20px;
+	display: block;
+	margin-left: auto;
+	margin-right: 150px;
+	margin-top: 70px;
+}
+
+#nick:focus{
+	border-color: #00B8D4;
+	outline: none;
+}
+
+#salas{
+	position:absolute;
+	top: 550px;
+	left: 600px;
+	font: 100% sans-serif;
+	color: white;
+}
+
+#nuParticipantes{
+	position:absolute;
+	top: 550px;
+	left: 700px;
+	font: 100% sans-serif;
+	color: white;
+	
+}
+#jugar{
+	color: white;
+	margin-top: 140px;
+	background-color: #006400;
+	font-family: lato;
+	font-size: 15pt;
+	width: 40%;
+	border-style: none;
+	border-radius: 5px;
+	padding: 10px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#jugar:hover{
+	background-color: #008000;
+}
