@@ -5,18 +5,20 @@
         <meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="styles/EntrarAlasala.css">
         <link rel="icon" href="Imagenes/favicon.ico.ico.ico">
+        <script src="/webjars/jquery/jquery.min.js"></script>
+        <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+        <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
 	
 </head>
 <body>
-		<div id="logoBanner"> <img src="Imagenes/logodefinitivoFinal.png" id="imagenLogo"/> </div>
-                <p style="text-align:center;"> <img src="Imagenes/logodefinitivoFinal.png"></p>
+		<div id="logoBanner">  <p style="text-align:center;"> <img src="Imagenes/logodefinitivoFinal.png" id="imagenLogo"></p></div>
+               
 		
 		<div class="entrar">
 		<div id="nombreNick">Nick:</div>
-		<input id="nick" name="nick" placeholder="Nombre Usario">
-		<div id="salas">Salas:</div>
-		<div id="nuParticipantes">#Participantes:</div>
-		<button id="jugar"><a style="color: white;" href="nivel1.html">Jugar</a></button>
+		<input id="nick" name="nick" placeholder="Nombre Usario"/>
+                <button id="jugar"><a style="color: white;" href="nivel1.html">Entrar</a></button>
 		</div>		
 </body>
 </html>

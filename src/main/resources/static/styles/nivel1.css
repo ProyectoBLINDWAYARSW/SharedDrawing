@@ -1,34 +1,29 @@
 #logo{
-	background-image: url("Imagenes/banner2.png");
-	width: 1360px;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+	background-color: gainsboro;
+	width: 100%;
 	overflow: hidden;
 	margin-left: auto;
 	margin-right: auto;
 }
-#logo:hover{
-	background-image: url("Imagenes/banner3.png");
-}
+
 body{
 	margin: 0;
-	background-image: url("Imagenes/fondo.png");
+	background-color: #8000ff ;
 }
 #logoBanner{
 	width:100%; 
-	height:200px; 
-	background-image: url("Imagenes/banner2.png");
+	height:300px; 
+	background-color:  #a18b00;
 }
 
-#logoBanner:hover{
-	background-image: url("Imagenes/banner3.png");
+*{
+	padding:0px;
+	margin:0px;
 }
-
 #imagenLogo{
 	display:block;
 	margin:auto;
-	width:100%;
+	width:70%;
 	top: 400px;
 	max-width:12000px;
 }	
@@ -58,14 +53,11 @@ body{
 }
 
 #BorrarTablero{
-	background-image: url("Imagenes/bottonCargar.png");
+	background-color: greenyellow;
 	height: 50px; 
 	position: relative;
 	float: left;
-    left: 30%;
-	top: -700px;
+        left: -60%;
+	top: 10px;
 }
 
-#BorrarTablero:hover{
-	background-image: url("Imagenes/bottonCargar2.png");
-}
