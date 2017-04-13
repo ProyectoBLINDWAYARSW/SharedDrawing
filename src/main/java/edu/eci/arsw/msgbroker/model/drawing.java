@@ -9,16 +9,13 @@ package edu.eci.arsw.msgbroker.model;
  *
  * @author User
  */
-public class Participante {
+public class drawing {
     
-    String nombre;
-    public Participante(String nombre){
-        this.nombre= nombre;
+    String color;
+    int x, y;
     
-    }
+    public drawing(String color,int x , int y ){
     
-    public String getNombre(){
-    return nombre;
     }
     
 }

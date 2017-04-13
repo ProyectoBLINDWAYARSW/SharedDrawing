@@ -8,6 +8,7 @@
         <script src="/webjars/jquery/jquery.min.js"></script>
         <script src="/webjars/sockjs-client/sockjs.min.js"></script>
         <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+        <script type="text/javascript" src="js/nivel1.js"></script>
 </head>
 <body>
        <div id="logoBanner">  <p style="text-align:center;"> <img src="Imagenes/logodefinitivoFinal.png" id="imagenLogo"></p></div>
@@ -15,16 +16,34 @@
 		<div id="logo">
 	    	<div>
 				<ul>
-					<li> Nivel 1</li>
+					<li> Nivel 1</li><br>
 					<li> Tiempo:</li>
+                                        
 				</ul>
 			</div>
 		</div>
 			<br>
 			<div id="canvas2">
-			<canvas id="myCanvas1"  > </canvas>
-			<canvas id="myCanvas2"  > </canvas>
-			<button id="BorrarTablero">Borrar Tablero</button>
+			<canvas id="myCanvas2"> </canvas>
+                        
+                        <button id="circuloverde" onclick="circuloVerde()"><img src="Imagenes/circuloverde.png" ></button>
+                        <button id="circuloazul" onclick="circuloAzul()"><img src="Imagenes/circuloazul.png" ></button>
+                        <button id="circulorojo" onclick="circuloRojo()"><img src="Imagenes/rojo.png" ></button>
+                        <button id="circuloamarillo" onclick="circuloAmarillo()"><img src="Imagenes/amarillo.png" ></button>
+                        <button id="circulomorado" onclick="circuloMorado()"><img src="Imagenes/circulomorado.png" ></button>
+                        
+                        <button id="triangulonaranja" onclick="boton()"><img src="Imagenes/naranja.png" ></button>
+                        <button id="trianguloverde" onclick="boton()"><img src="Imagenes/triangleverde.png" ></button>
+                        <button id="trianguloazul" onclick="trianguloAzul()"><img src="Imagenes/trianguloazul.png" ></button>
+                        <button id="triangulomorado" onclick="boton()"><img src="Imagenes/triangulomorado.png" ></button>
+                        <button id="triangulorojo" onclick="boton()"><img src="Imagenes/triangulorojo.png" ></button>
+                        
+                         <button id="cuadradoamarillo" onclick="boton()"><img src="Imagenes/cuadradoamarillo.png" ></button>
+                        <button id="cuadradoazul" onclick="boton()"><img src="Imagenes/cuadradoazul.png" ></button>
+                        <button id="cuadradomorado" onclick="boton()"><img src="Imagenes/cuadradomorado.png" ></button>
+                        <button id="cuadradonegro" onclick="boton()"><img src="Imagenes/cuadradonegro.png" ></button>
+                        <button id="cuadradoverde" onclick="boton()"><img src="Imagenes/cuadradoverde.png" ></button>
+                        
 			</div>
 </body>
 </html>

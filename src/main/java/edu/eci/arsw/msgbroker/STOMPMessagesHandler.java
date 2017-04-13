@@ -5,7 +5,7 @@
  */
 package edu.eci.arsw.msgbroker;
 
-import edu.eci.arsw.msgbroker.model.Point;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -30,43 +30,12 @@ public class STOMPMessagesHandler {
         @Autowired
 	SimpMessagingTemplate msgt;
         
-        List<Point> puntos = new ArrayList<Point>();
+        
 
     
-	@MessageMapping("/newpoint")    
-	public void getPunto(Point pt) throws Exception {
-		System.out.println("Nuevo punto recibido en el servidor!:"+pt);
-                agregarPunto(pt);
-		msgt.convertAndSend("/topic/newpoint",pt);
-	}
+	
         
-        @MessageMapping("/newpolygon")  
-            public void getPolygon(List<Point> pts) throws Exception {
-            System.out.println("Nuevo arreglo de puntos recibido en el servidor!:"+pts);
-            msgt.convertAndSend("/topic/newpolygon", pts);
-            puntos = new ArrayList<Point>();
-        }
-            
-        @RequestMapping(value = "/puntos", method = RequestMethod.POST)    
-        public ResponseEntity<?> manejadorPostRecursoXX(@RequestBody Point pt){
-        try {
-            //registrar dato
-            agregarPunto(pt);
-            msgt.convertAndSend("/topic/newpoint", pt);
-            return new ResponseEntity<>(HttpStatus.CREATED);
-        } catch (Exception ex) {
-            Logger.getLogger(STOMPMessagesHandler.class.getName()).log(Level.SEVERE, null, ex);
-            return new ResponseEntity<>("Error bla bla bla",HttpStatus.FORBIDDEN);            
-        }        
-    }     
-        
-        private void agregarPunto(Point pt) throws Exception{
-        puntos.add(pt);
-        if(puntos.size() == 4) {
-            getPolygon(puntos);
-        }
-        
-    }
+    
         
         
     
