@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+tiempoLimite = 90000;
 $(document).ready(
         
         function () {
             console.info('loading script!...');
             nivel1();
             tressegundos();
+            setInterval('carga()', 6000);
         }
            
 );
@@ -101,6 +103,8 @@ function tressegundos() {
             }, 3000);
 }
 
+
+
 function disconnect() {
     if (stompClient !== null) {
         stompClient.disconnect();
@@ -108,4 +112,8 @@ function disconnect() {
     setConnected(false);
     console.log("Disconnected");
     
+}
+function carga(){
+var barra = document.getElementById('barra');
+barra.value +=5;
 }

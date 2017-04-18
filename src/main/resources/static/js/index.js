@@ -1,4 +1,4 @@
-nombresParticipantes=[];
+participante=[];
 var stompClient = null;
 sala = 0;
 
@@ -15,7 +15,20 @@ function connect() {
     });
 }
 
-
+function registrarParticipantes(){
+ participante = {nombre:$("#nick").val()};
+ console.info("entro a la lista");
+        $.ajax({
+        url: "/shareddrawing/participantes",
+        type: 'PUT',
+        data: JSON.stringify(participante),
+        contentType: "application/json"
+        }).then(function(){  
+                 console.info('lregistrado!!');
+            }, function(err){
+                alert("err:"+err.responseText);
+            });
+}
 
 function disconnect() {
     if (stompClient != null) {
@@ -24,9 +37,6 @@ function disconnect() {
     setConnected(false);
     console.log("Disconnected");
 }
-
-
-
 
 
 $(document).ready(

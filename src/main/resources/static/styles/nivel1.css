@@ -162,3 +162,17 @@ body{
         left: 15.5%;
 	top: -204px;
 }
+
+.contenedor{
+        width: 25%;
+        margin: 0 auto;
+        color: green;
+    
+}
+progress{ 
+        background-color: #f3f3f3; 
+        border: 1px; height: 38px; 
+        width: 200px; 
+        border-radius: 9px; 
+        color: #FFF5EE;
+}

@@ -3,8 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-participantes = [];
-
+$(document).ready(
+        
+        function () {
+            console.info('loading script!...');
+            listaParticipantes();
+        }          
+);
+participantes=[];
 function connect() {
         var socket = new SockJS('/stompendpoint');
         stompClient = Stomp.over(socket);
@@ -21,10 +27,16 @@ function connect() {
     });
 }
 
-$(document).ready(
-        
-        function () {
-            console.info('loading script!...');
-        }
-           
-);
+
+function listaParticipantes(){
+    $.get('/shareddrawing/participantes', 
+    function(data){
+    participantes = data;
+    function listar(i){
+         $('#participante').prepend('<div>'+ i.nombre+'</div>');
+    }
+    participantes.forEach(listar);
+    });
+ }
+
+
