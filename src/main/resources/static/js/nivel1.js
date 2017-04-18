@@ -33,10 +33,15 @@ function connect() {
 function circuloVerde(){
     var c = document.getElementById("myCanvas2");
     var ctx = c.getContext("2d");
-    ctx.beginPath();
-    ctx.fillStyle = "rgb(087, 166, 057)";
-    ctx.arc(55,50,10,0,2*Math.PI,true);
-    ctx.fill();
+    $.get("/shareddrawing/drawing",function(data){
+     
+        ctx.beginPath();
+        ctx.fillStyle = "rgb(087, 166, 057)";
+        ctx.arc(55,50,10,0,2*Math.PI,true);
+        ctx.fill();
+     } 
+     );
+   
 }
 function circuloMorado(){
     var c = document.getElementById("myCanvas2");

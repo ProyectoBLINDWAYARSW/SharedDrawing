@@ -27,7 +27,6 @@ function connect() {
     });
 }
 
-
 function listaParticipantes(){
     $.get('/shareddrawing/participantes', 
     function(data){

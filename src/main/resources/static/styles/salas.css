@@ -53,7 +53,7 @@ body{
 }
 #participante{
         position:absolute;
-	top: 496px;
+	top: 499px;
 	left: 700px;
 	font: 100% sans-serif;
 	color: white;
@@ -76,7 +76,4 @@ body{
 	background-color: #008000;
 }
 
-.colorHola{
-   color: white;
-}
 
