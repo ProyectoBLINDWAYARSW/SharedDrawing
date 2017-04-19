@@ -9,15 +9,34 @@ package edu.eci.arsw.msgbroker.model;
  *
  * @author User
  */
-public class drawing {
+public class Drawing {
     
     String color;
-    int x, y;
+    int x, y,z;
     
-    public drawing(String color,int x , int y ){
+    public Drawing(){}
+    public Drawing(String color,int x , int y, int z ){
+       this.x = x;
+       this.y = y;
+       this.z = z;
+       this.color = color;
+    }
     
+    public String getColor(){
+     return color;
     }
     
     
+    public int getX(){
+    return x;
+    }
     
+    public int getY(){
+    return y;
+    }
+     
+    public int getZ(){
+    return z;
+    }
+     
 }

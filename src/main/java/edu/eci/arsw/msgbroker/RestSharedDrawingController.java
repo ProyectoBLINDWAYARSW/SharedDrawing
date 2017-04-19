@@ -7,7 +7,7 @@ package edu.eci.arsw.msgbroker;
 
 
 
-import edu.eci.arsw.service.Dservice;
+import edu.eci.arsw.service.DrawingSub;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,13 +25,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/drawing")
 public class RestSharedDrawingController {
         
-        //*@Autowired
-        //*Dservice b;
+        //@Autowired
+        DrawingSub b=new DrawingSub();
     
-        @RequestMapping(path = "/drawingComplet",method = RequestMethod.GET)
-        public ResponseEntity<?> getShareDrawing() {
+        @RequestMapping(path = "/ShareDrawing", method = RequestMethod.GET)
+        public ResponseEntity<?> getShareDrawing(){
             try {
-               return new ResponseEntity<>("",HttpStatus.ACCEPTED);
+               return new ResponseEntity<>(b.getDrawing(),HttpStatus.ACCEPTED);
             }catch (Exception ex) {
             Logger.getLogger(RestSharedDrawingController.class.getName()).log(Level.SEVERE, null, ex);
             return new ResponseEntity<>("No hay participantes",HttpStatus.NOT_FOUND);

@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,12 +29,14 @@ public class RestParicipantesController {
     
         @Autowired
         ParticipantesService participantes;
+        
+        @Autowired
+        SimpMessagingTemplate msgt;
       
       
         @RequestMapping(path = "/participantes",method = RequestMethod.GET)
         public ResponseEntity<?> getParticipantes() {
             try {
-                
                return new ResponseEntity<>(participantes.getParticipantes(),HttpStatus.ACCEPTED);
             }  catch (Exception ex) {
             Logger.getLogger(RestParicipantesController.class.getName()).log(Level.SEVERE, null, ex);
@@ -42,10 +45,11 @@ public class RestParicipantesController {
     
         }
     
-        @RequestMapping(path = "/participantes",method = RequestMethod.PUT)
+        @RequestMapping(path = "/participante",method = RequestMethod.PUT)
         public ResponseEntity<?> addParticipantNum(@RequestBody Participante p) {
         try {  
             participantes.registrarParticipantes(p);
+            msgt.convertAndSend("/topic/participante",p);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (Exception ex) {
             Logger.getLogger(RestParicipantesController.class.getName()).log(Level.SEVERE, null, ex);

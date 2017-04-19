@@ -8,7 +8,9 @@ $(document).ready(
         
         function () {
             console.info('loading script!...');
+            connect();
             nivel1();
+            cargarParticipantesSala();
             tressegundos();
             setInterval('carga()', 6000);
         }
@@ -20,12 +22,16 @@ function connect() {
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);
         
-        stompClient.subscribe('/topic/newpoint', function (data) {
+        stompClient.subscribe("/topic/participante", function (data) {
             var theObject=JSON.parse(data.body);
-            var canvas = document.getElementById("myCanvas2");
-            dibujarPoint(canvas,theObject.x, theObject.y);
-                //alert("el evento fue recibido");
+            $("#participantesSala").append("<div>"+theObject.nombre+"</div>");  
         });
+        //stompClient.subscribe('/topic/newpoint', function (data) {
+            //var theObject=JSON.parse(data.body);
+            //var canvas = document.getElementById("myCanvas2");
+            //dibujarPoint(canvas,theObject.x, theObject.y);
+                //alert("el evento fue recibido");
+        //});
         
          
     });
@@ -33,15 +39,14 @@ function connect() {
 function circuloVerde(){
     var c = document.getElementById("myCanvas2");
     var ctx = c.getContext("2d");
-    $.get("/shareddrawing/drawing",function(data){
-     
+    $.get("/drawing/ShareDrawing",function(data){
+        Circuloverde=data;
         ctx.beginPath();
-        ctx.fillStyle = "rgb(087, 166, 057)";
-        ctx.arc(55,50,10,0,2*Math.PI,true);
+        ctx.fillStyle = Circuloverde.circuloVerde.color;
+        ctx.arc(Circuloverde.circuloVerde.x,Circuloverde.circuloVerde.y,Circuloverde.circuloVerde.z,0,2*Math.PI,true);
         ctx.fill();
      } 
-     );
-   
+     );  
 }
 function circuloMorado(){
     var c = document.getElementById("myCanvas2");
@@ -108,7 +113,16 @@ function tressegundos() {
             }, 3000);
 }
 
-
+function cargarParticipantesSala(){
+    $.get('/shareddrawing/participantes', 
+    function(data){
+    participantes = data;
+    function listar(i){
+         $("#participantesSala").append("<div>"+ i.nombre+"</div>");
+    }
+    participantes.forEach(listar);
+    });
+}
 
 function disconnect() {
     if (stompClient !== null) {
