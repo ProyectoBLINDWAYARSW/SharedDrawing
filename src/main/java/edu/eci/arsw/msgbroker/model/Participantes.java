@@ -6,6 +6,7 @@
 package edu.eci.arsw.msgbroker.model;
 
 import edu.eci.arsw.interfaces.ParticipantesService;
+import edu.eci.arsw.msgbroker.model.Participante;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;

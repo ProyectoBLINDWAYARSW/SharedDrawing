@@ -26,8 +26,14 @@ public class STOMPMessagesHandler {
     SimpMessagingTemplate msgt;
     
    @MessageMapping("/participante")    
-	public void getPunto(Participante pt) throws Exception {
+	public void getParticipante(Participante pt) throws Exception {
 		System.out.println("Nuevo participante recibido en el servidor!:"+pt);
 		msgt.convertAndSend("/topic/participante",pt.getNombre());
+	}
+        
+        @MessageMapping("/ShareDrawing")    
+	public void getDibujo(Participante pt) throws Exception {
+		System.out.println("Nuevo participante recibido en el servidor!:"+pt);
+		msgt.convertAndSend("/topic/ShareDrawing",pt.getNombre());
 	}
 }

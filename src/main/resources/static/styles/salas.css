@@ -42,6 +42,13 @@ body{
 	font: 100% sans-serif;
 	color: white;
 }
+#partSala{
+        position:absolute;
+	top: 500px;
+	left: 500px;
+	font: 100% sans-serif;
+	color: white;
+}
 
 #nomParticipantes{
 	position:absolute;
@@ -53,7 +60,7 @@ body{
 }
 #participante{
         position:absolute;
-	top: 499px;
+	top: 500px;
 	left: 700px;
 	font: 100% sans-serif;
 	color: white;

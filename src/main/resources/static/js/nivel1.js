@@ -4,18 +4,9 @@
  * and open the template in the editor.
  */
 tiempoLimite = 90000;
-$(document).ready(
-        
-        function () {
-            console.info('loading script!...');
-            connect();
-            nivel1();
-            cargarParticipantesSala();
-            tressegundos();
-            setInterval('carga()', 6000);
-        }
-           
-);
+figuras=[];
+
+
 function connect() {
     var socket = new SockJS('/stompendpoint');
     stompClient = Stomp.over(socket);
@@ -26,28 +17,32 @@ function connect() {
             var theObject=JSON.parse(data.body);
             $("#participantesSala").append("<div>"+theObject.nombre+"</div>");  
         });
-        //stompClient.subscribe('/topic/newpoint', function (data) {
-            //var theObject=JSON.parse(data.body);
-            //var canvas = document.getElementById("myCanvas2");
-            //dibujarPoint(canvas,theObject.x, theObject.y);
-                //alert("el evento fue recibido");
-        //});
-        
          
-    });
+        
+            stompClient.subscribe("/topic/ShareDrawing", function (data) {
+            var theObject=JSON.parse(data.body);
+                figuras = theObject;
+                pintarCirculo(theObject.circuloVerde.color, theObject.circuloVerde.x,theObject.circuloVerde.y,theObject.circuloVerde.z);
+            });
+        
+            
+});
 }
-function circuloVerde(){
-    var c = document.getElementById("myCanvas2");
-    var ctx = c.getContext("2d");
-    $.get("/drawing/ShareDrawing",function(data){
-        Circuloverde=data;
+
+function circulo(){
+        $.get("/drawing/ShareDrawing",function(data){
+        });
+} 
+function pintarCirculo(color, x,y,z){
+     //Circuloverde = data;
+        var c = document.getElementById("myCanvas2");
+        var ctx = c.getContext("2d");
         ctx.beginPath();
-        ctx.fillStyle = Circuloverde.circuloVerde.color;
-        ctx.arc(Circuloverde.circuloVerde.x,Circuloverde.circuloVerde.y,Circuloverde.circuloVerde.z,0,2*Math.PI,true);
+        ctx.fillStyle = color;
+        ctx.arc(x,y,z,0,2*Math.PI,true);
         ctx.fill();
-     } 
-     );  
 }
+
 function circuloMorado(){
     var c = document.getElementById("myCanvas2");
     var ctx = c.getContext("2d");
@@ -97,9 +92,9 @@ function trianguloAzul(){
 }
 
 function nivel1(){
-    circuloVerde();
+    pintarCirculo("rgb(087, 166, 057)",55,50,10);
+    pintarCirculo("rgb(160, 052, 114)",80,90,10);
     circuloMorado();
-    circuloAmarillo();
     circuloRojo();
     circuloAzul(); 
     trianguloAzul();
@@ -136,3 +131,17 @@ function carga(){
 var barra = document.getElementById('barra');
 barra.value +=5;
 }
+
+$(document).ready(
+        
+        function () {
+            //console.info('loading script!...');
+            
+            nivel1();
+            cargarParticipantesSala();
+            tressegundos();
+            setInterval('carga()', 6000);
+            connect();
+        }
+           
+);
