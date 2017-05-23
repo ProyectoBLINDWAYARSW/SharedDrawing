@@ -35,7 +35,7 @@ public class RestSharedDrawingController {
         @RequestMapping(path = "/ShareDrawing", method = RequestMethod.GET)
         public ResponseEntity<?> getShareDrawing(){
             try {
-               msgt.convertAndSend("/topic/ShareDrawing",b.getDrawing());
+               //msgt.convertAndSend("/topic/ShareDrawing",b.getDrawing());
                return new ResponseEntity<>(b.getDrawing(),HttpStatus.ACCEPTED);
             }catch (Exception ex) {
             Logger.getLogger(RestSharedDrawingController.class.getName()).log(Level.SEVERE, null, ex);

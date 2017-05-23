@@ -29,10 +29,10 @@ function connect() {
 });
 }
 
-function circulo(){
-        $.get("/drawing/ShareDrawing",function(data){
-        });
-} 
+///function circulo(){
+   //     $.get("/drawing/ShareDrawing",function(data){
+     //   });
+//} 
 function pintarCirculo(color, x,y,z){
      //Circuloverde = data;
         var c = document.getElementById("myCanvas2");
@@ -105,7 +105,7 @@ function tressegundos() {
             function(){ 
             var c = document.getElementById("myCanvas2");
                 c.width = c.width;    
-            }, 3000);
+            }, 5000);
 }
 
 function cargarParticipantesSala(){
