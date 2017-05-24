@@ -6,7 +6,7 @@
 package edu.eci.arsw.interfaces;
 
 import edu.eci.arsw.service.DrawingServiceException;
-import edu.eci.arsw.msgbroker.model.Drawing;
+import edu.eci.arsw.msgbroker.model.Drawing2;
 import java.util.Map;
 
 /**
@@ -14,5 +14,5 @@ import java.util.Map;
  * @author User
  */
 public interface DService {
-    public Map<String,Drawing> getDrawing()throws DrawingServiceException;
+    public Map<String,Drawing2> getDrawing()throws DrawingServiceException;
 }

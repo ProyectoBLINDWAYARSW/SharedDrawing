@@ -7,7 +7,7 @@ package edu.eci.arsw.service;
 
 
 import edu.eci.arsw.interfaces.DService;
-import edu.eci.arsw.msgbroker.model.Drawing;
+import edu.eci.arsw.msgbroker.model.Drawing2;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.stereotype.Service;
@@ -24,16 +24,16 @@ public class DrawingSub implements DService {
     }
     
     @Override
-    public Map<String,Drawing> getDrawing() throws DrawingServiceException {
+    public Map<String,Drawing2> getDrawing() throws DrawingServiceException {
         return driwing;
     }
     
-    private static final Map<String, Drawing>  driwing = new ConcurrentHashMap<>();
+    private static final Map<String, Drawing2>  driwing = new ConcurrentHashMap<>();
 
     
     static{
-     driwing.put("circuloVerde", new Drawing("rgb(087, 166, 057)",55,50,10));
-     driwing.put("circuloMorado", new Drawing("rgb(160, 052, 114)",20,20,10));
+     driwing.put("circuloVerde", new Drawing2("rgb(087, 166, 057)",55,50,10));
+     driwing.put("circuloMorado", new Drawing2("rgb(160, 052, 114)",20,20,10));
      
     }
       
