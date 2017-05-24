@@ -5,7 +5,7 @@ deployment:
   staging:
     branch: master
     heroku:
-      appname: SharedDrawing
+      appname: shareddrawing2
 test:
   post:
     - mvn site
