@@ -29,10 +29,10 @@ function connect() {
 });
 }
 
-///function circulo(){
-   //     $.get("/drawing/ShareDrawing",function(data){
-     //   });
-//} 
+function circulo(){
+  $.get("/drawing/ShareDrawing",function(data){
+     });
+} 
 function pintarCirculo(color, x,y,z){
      //Circuloverde = data;
         var c = document.getElementById("myCanvas2");
