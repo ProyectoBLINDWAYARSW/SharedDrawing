@@ -38,6 +38,6 @@ public class STOMPMessagesHandler {
         @MessageMapping("/ShareDrawing")    
 	public void getDibujo(String color) throws Exception {
 		System.out.println("Nuevo participante recibido en el servidor!:"+color);
-		msgt.convertAndSend("/topic/ShareDrawing",dra.getDrawing());
+		//msgt.convertAndSend("/topic/ShareDrawing",dra.getDrawing());
 	}
 }

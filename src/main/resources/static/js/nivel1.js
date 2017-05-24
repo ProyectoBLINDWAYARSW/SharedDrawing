@@ -17,7 +17,6 @@ function connect() {
             var theObject=JSON.parse(data.body);
             $("#participantesSala").append("<div>"+theObject.nombre+"</div>");  
         });
-         
         
             stompClient.subscribe("/topic/ShareDrawing", function (data) {
             var theObject=JSON.parse(data.body);
